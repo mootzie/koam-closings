@@ -57,3 +57,18 @@ form {
   border: 1px solid grey;
   width: 15rem;
 }
+.table-shadow {
+  box-shadow: 0 0 10px;
+}
+.btn-shadow {
+  box-shadow: 0 0 10px;
+}
+.nav-link {
+  display: flex;
+  position: relative;
+  float: right;
+  justify-content: flex-end;
+}
+.nav-link {
+  margin-right: 300px;
+}
