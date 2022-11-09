@@ -26,6 +26,43 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#from" )
+        .datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 3
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 3
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
+  } );
+  </script>
 <script>
 $( function() {
   $( "#datepicker" ).datepicker();
@@ -132,7 +169,7 @@ $( function() {
           ><strong>Change Status To: </strong></label
         >
         <div class="col-md-9">
-          <select id="selectbasic" name="selectbasic" class="form-control">
+          <select id="selectbasic" name="selectbasic" class="input">
             <option value="1">Option one</option>
             <option value="2">Option two</option>
             <option value="3">Option three</option>
@@ -144,16 +181,39 @@ $( function() {
          <div class="form-group">
                 <label class="col-md-3 control-label" for="textinput"><strong>Status: </strong></label>  
                 <div class="col-md-3">
-                  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+                  <input id="textinput" name="textinput" type="text" placeholder="" class="input">
                 </div>     
           </div>
           <!--END DATE-->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label class="col-md-3 control-label" for="textinput"><strong>Start Date: </strong></label>  
             <div class="col-md-3">
               <input id="datepicker" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
             </div>     
       </div>
+      <div class="form-group">
+        <label class="col-md-3 control-label" for="textinput"><strong>End Date: </strong></label>  
+        <div class="col-md-3">
+          <input id="datepicker1" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+        </div>     
+  </div> -->
+ 
+  
+
+
+<div class="form-group">
+  <label class="" for="from"><strong>Start Date: </strong></label>
+  <div>
+    <input class="input" type="text" id="from" name="from">
+  </div>
+</div>
+<div class="form-group">
+  <label class="" for="to"><strong>End Date: </strong></label>
+  <div>
+    <input class="input" type="text" id="to" name="from">
+  </div>
+</div>
+ 
       <!--END DATE-->
       
               <div class="row text-center justify-content-center">
@@ -161,7 +221,5 @@ $( function() {
                     <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
                 </div>
             </div>
-
-
   </body>
 </html>
