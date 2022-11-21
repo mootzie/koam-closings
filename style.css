@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  font-family: "Robato Slab", serif;
 }
 
 .global-container {
@@ -14,7 +15,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed; */
 }
-
+.box-shadow {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
 form {
   padding-top: 10px;
   font-size: 14px;
@@ -28,6 +31,10 @@ form {
 .btn {
   font-size: 14px;
   margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: black;
 }
 
 .login-form {
@@ -58,7 +65,7 @@ form {
   width: 15rem;
 }
 .table-shadow {
-  box-shadow: 0 0 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .btn-shadow {
   box-shadow: 0 0 10px;
@@ -70,5 +77,26 @@ form {
   justify-content: flex-end;
 }
 .nav-link {
-  margin-right: 300px;
+  margin-right: 30px;
+  color: white;
+}
+
+.navbar-nav a:hover {
+  color: rgb(1, 121, 233);
+}
+.navbar-nav a {
+  color: white;
+}
+.btn-orange {
+  background-color: rgb(233, 152, 1);
+}
+.btn:hover {
+  background-color: black;
+}
+.navbarFix {
+  display: flex;
+  justify-content: space-around;
+}
+.home-small:hover {
+  color: blue;
 }
